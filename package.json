@@ -1,0 +1,22 @@
+{
+  "name": "pharmacy-management-system",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "start": "lerna run start --parallel",
+    "build": "lerna run build",
+    "test": "lerna run test"
+  },
+  "devDependencies": {
+    "@babel/core": "7.23.0",
+    "@react-native-community/cli": "11.3.6",
+    "lerna": "^6.0.0",
+    "react-native": "0.80.1"
+  },
+  "dependencies": {
+    "react": "19.1.0",
+    "react-dom": "19.1.0"
+  }
+}
