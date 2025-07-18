@@ -1,0 +1,26 @@
+name: CI Pipeline
+
+# When should this workflow run?
+on:
+  push:
+    branches: [ main ]  # Runs on pushes to "main" branch
+  pull_request:
+    branches: [ main ]  # Runs on PRs targeting "main"
+
+jobs:
+  test:
+    runs-on: ubuntu-latest  # Uses a clean Ubuntu Linux machine
+    
+    steps:
+    - uses: actions/checkout@v4  # Checks out your code
+    
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'  # Uses Node.js 18
+        
+    - name: Install dependencies
+      run: npm install  # Installs npm packages
+      
+    - name: Run tests
+      run: npm test  # Runs your test suite
